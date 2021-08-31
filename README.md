@@ -53,7 +53,8 @@ compiler.iconbitmap(os.path.abspath('votreimage.ico'))
 # Ajoutons l'éditeur
 editor = Text(height=55, width=250, bg='#545955', foreground='white', selectbackground='#5865F2', insertbackground='white') #  A modifier a votre guise
 
-# Cette ligne doit toujours être a la fin
+# Ces ligne doit toujours être a la fin
+editor.pack()
 compiler.mainloop()
 ```
 
