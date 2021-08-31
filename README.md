@@ -99,7 +99,21 @@ def open_file(*args):
         set_file_path(path)
         compiler.title(f'FiveCode - {path}')
   
-
+def save_as(*args):
+    global file_path
+    if file_path == '':
+        path = asksaveasfilename()
+        compiler.title(f'FiveCode - {path}')
+        set_current_file(path)
+    else:
+        path = file_path
+    with open(path, 'w') as file:
+        code = editor.get('1.0', END)
+        file.write(code)
+        set_file_path(path)
+    
+def exit(*args):
+    sys.exit()
         
 ```
 
