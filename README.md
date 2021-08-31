@@ -764,8 +764,6 @@ compiler.bind("<Control-o>", open_file)
 compiler.bind("<Control-s>", save_as)
 compiler.bind("<Control-a>", save_as)
 compiler.bind("<Control-Key-5>", run)
-compiler.bind("<Control-l>", new_console)
-compiler.bind("<Control-i>", clear_console)
 ```
 
 Puis pour ajouter la ponctuation (*ex: le fait que quand on mette un guillemet, un autre se place après et la curseur se replace au milieu, ...*)
