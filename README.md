@@ -73,6 +73,8 @@ file_menu.add_command(label='Open Ctrl+O', command=open_file)
 file_menu.add_command(label='Save Ctrl+S', command=save_as)
 file_menu.add_command(label='Exit', command=exit)
 menu_bar.add_cascade(label='File', menu=file_menu)
+
+compiler.config(menu=menu_bar)
 ```
 
 **Au dessus** de ce menu nous viendrons ajouter les fonctions new, open, save et exit et une variable contenant le path
