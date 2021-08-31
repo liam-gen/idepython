@@ -230,3 +230,47 @@ compiler.config(menu=menu_bar)
 editor.pack()
 compiler.mainloop()
 ```
+
+### Lancement du code
+Tout d'abord ajpouton le code output (*sortie de code*) juste a coté du text editor écrivez ceci:
+
+```python
+code_output = Text(height=10, width=250, bg='#212422', foreground='white', selectbackground='#5865F2')
+```
+
+Puis ajoutez ceci dans les dernières lignes de code:
+
+```python
+code_output.pack()
+```
+
+Ajoutons ensuite un menu pour lancer le fichier. Ajoutez le juste après le menu de fichiers
+
+```python
+run_bar = Menu(menu_bar, tearoff=0)
+run_bar.add_command(label='Run Ctrl+5', command=run)
+menu_bar.add_cascade(label='Run', menu=run_bar)
+```
+
+Ajoutons en dessous des autres fonctions la fonction permettant de lancer le code
+
+```python
+def run(*args):
+    # Sauvagarder le fichier si il ne l'est pas
+    if file_path == '':
+        path = asksaveasfilename()
+        compiler.title(f'FiveCode - {path}')
+    else:
+        path = file_path
+    with open(path, 'w') as file:
+        code = editor.get('1.0', END)
+        file.write(code)
+        set_file_path(path)
+        
+    # Pour l'instant nous lancerons que du code Python mais nous modifirons cela plus tard
+    command = f'python {file_path}'
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    output, error = process.communicate()
+    code_output.insert('1.0', output)
+    code_output.insert('1.0',  error)
+```
