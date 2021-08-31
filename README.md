@@ -59,9 +59,38 @@ compiler.mainloop()
 ```
 
 Ce qui vous donne : 
-![Application basique](https://images.liamgen.repl.co/1.png)
+![Application basique](https://images.liamgen.repl.co/2.png)
 
-Ajoutons un menu
+`Bien c'est déjà le fin de ce chapitre. Voici le résumé du code
+```python
+# Importation des modules
+import tkinter
+from tkinter import *
+from tkinter.filedialog import asksaveasfilename, askopenfilename
+import subprocess
+import time
+import sys
+import os
+from tkhtmlview import HTMLLabel
+from markdown import markdown
+
+compiler = Tk()
+compiler.title("Mon éditeur de code") # Titre de votre app
+compiler.geometry("900x700+500+150") # Taille de votre app
+# La fonction os.path.abspath est requise pour convertir en EXE
+compiler.iconbitmap(os.path.abspath('botdiscord.png'))
+
+# Ajoutons l'éditeur
+editor = Text(height=55, width=250, bg='#545955', foreground='white', selectbackground='#5865F2', insertbackground='white') #  A modifier a votre guise
+
+# Ces ligne doit toujours être a la fin
+editor.pack()
+compiler.mainloop()
+```
+
+### Système de fichiers
+
+Ajoutons un menu pour les fichiers
 
 ```python
 # Menu
@@ -120,9 +149,84 @@ def exit(*args):
         
 ```
 
-### Système de fichiers
+Nous avons maintenant ceci:
+![Application basique](https://images.liamgen.repl.co/3.png)
 
-Ajoutons ceci 
+Bien! Voici notre code maintenant:
+
 ```python
-def 
+# Importation des modules
+import tkinter
+from tkinter import *
+from tkinter.filedialog import asksaveasfilename, askopenfilename
+import subprocess
+import time
+import sys
+import os
+from tkhtmlview import HTMLLabel
+from markdown import markdown
+
+compiler = Tk()
+compiler.title("Mon éditeur de code") # Titre de votre app
+compiler.geometry("900x700+500+150") # Taille de votre app
+# La fonction os.path.abspath est requise pour convertir en EXE
+compiler.iconbitmap(os.path.abspath('botdiscord.png'))
+
+# Ajoutons l'éditeur
+editor = Text(height=55, width=250, bg='#545955', foreground='white', selectbackground='#5865F2', insertbackground='white') #  A modifier a votre guise
+
+# Système de fichiers
+
+file_path = ""
+
+def set_file_path(path):
+    global file_path
+    file_path = path
+
+def new_file(*args):
+    set_file_path("")
+    editor.delete(1.0, END)
+    editor.insert(1.0, '=> Nouveau Fichier <=')
+    compiler.title(f'Mon éditeur de code - Untitled')
+    
+def open_file(*args):
+    path = askopenfilename()
+    set_current_file(path)
+    with open(path, 'r') as file:
+        code = file.read()
+        editor.delete('1.0', END)
+        editor.insert('1.0', code)
+        set_file_path(path)
+        compiler.title(f'FiveCode - {path}')
+  
+def save_as(*args):
+    global file_path
+    if file_path == '':
+        path = asksaveasfilename()
+        compiler.title(f'FiveCode - {path}')
+        set_current_file(path)
+    else:
+        path = file_path
+    with open(path, 'w') as file:
+        code = editor.get('1.0', END)
+        file.write(code)
+        set_file_path(path)
+    
+def exit(*args):
+    sys.exit()
+
+#Menu
+menu_bar = Menu(compiler)
+
+file_menu = Menu(menu_bar, tearoff=0)
+file_menu.add_command(label="New file", command=new_file)
+file_menu.add_command(label='Open Ctrl+O', command=open_file)
+file_menu.add_command(label='Save Ctrl+S', command=save_as)
+file_menu.add_command(label='Exit', command=exit)
+menu_bar.add_cascade(label='File', menu=file_menu)
+
+compiler.config(menu=menu_bar)
+# Ces ligne doit toujours être a la fin
+editor.pack()
+compiler.mainloop()
 ```
