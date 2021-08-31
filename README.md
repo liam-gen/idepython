@@ -1,6 +1,6 @@
 # Créer un ide complet en Python
 
-##Chapitres:<br>
+## Chapitres:<br>
 1 - [Application de base](#application-de-base)<br>
 2 - Système de fichiers<br>
 3 - Lancement du code<br>
@@ -47,7 +47,11 @@ from markdown import markdown
 compiler = Tk()
 compiler.title("Mon éditeur de code") # Titre de votre app
 compiler.geometry("900x700+500+150") # Taille de votre app
-compiler.iconbitmap(os.path.abspath('votreimage.ico')) # Utilisez bien la fonction os.path.abspath pour avoir le tout le path. Ce sera utile quand nous convertirons l'app en EXE
+# La fonction os.path.abspath est requise pour convertir en EXE
+compiler.iconbitmap(os.path.abspath('votreimage.ico'))
+
+# Ajoutons l'éditeur
+editor = Text(height=55, width=250, bg='#545955', foreground='white', selectbackground='#5865F2', insertbackground='white') #  A modifier a votre guise
 
 # Cette ligne doit toujours être a la fin
 compiler.mainloop()
@@ -59,6 +63,44 @@ Ce qui vous donne :
 Ajoutons un menu
 
 ```python
+# Menu
+menu_bar = Menu(compiler)
+
+file_menu = Menu(menu_bar, tearoff=0)
+file_menu.add_command(label="New file", command=new_file)
+file_menu.add_command(label='Open Ctrl+O', command=open_file)
+file_menu.add_command(label='Save Ctrl+S', command=save_as)
+file_menu.add_command(label='Exit', command=exit)
+menu_bar.add_cascade(label='File', menu=file_menu)
+```
+
+**Au dessus** de ce menu nous viendrons ajouter les fonctions new, open, save et exit et une variable contenant le path
+
+```python
+file_path = ""
+
+def set_file_path(path):
+    global file_path
+    file_path = path
+
+def new_file(*args):
+    set_file_path("")
+    editor.delete(1.0, END)
+    editor.insert(1.0, '=> Nouveau Fichier <=')
+    compiler.title(f'Mon éditeur de code - Untitled')
+    
+def open_file(*args):
+    path = askopenfilename()
+    set_current_file(path)
+    with open(path, 'r') as file:
+        code = file.read()
+        editor.delete('1.0', END)
+        editor.insert('1.0', code)
+        set_file_path(path)
+        compiler.title(f'FiveCode - {path}')
+  
+
+        
 ```
 
 ### Système de fichiers
