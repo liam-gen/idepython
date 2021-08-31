@@ -123,7 +123,6 @@ def new_file(*args):
     
 def open_file(*args):
     path = askopenfilename()
-    set_current_file(path)
     with open(path, 'r') as file:
         code = file.read()
         editor.delete('1.0', END)
@@ -136,7 +135,6 @@ def save_as(*args):
     if file_path == '':
         path = asksaveasfilename()
         compiler.title(f'FiveCode - {path}')
-        set_current_file(path)
     else:
         path = file_path
     with open(path, 'w') as file:
@@ -191,7 +189,6 @@ def new_file(*args):
     
 def open_file(*args):
     path = askopenfilename()
-    set_current_file(path)
     with open(path, 'r') as file:
         code = file.read()
         editor.delete('1.0', END)
@@ -204,7 +201,6 @@ def save_as(*args):
     if file_path == '':
         path = asksaveasfilename()
         compiler.title(f'FiveCode - {path}')
-        set_current_file(path)
     else:
         path = file_path
     with open(path, 'w') as file:
@@ -274,3 +270,6 @@ def run(*args):
     code_output.insert('1.0', output)
     code_output.insert('1.0',  error)
 ```
+
+Voici le rendu:
+![Lancer le code](https://images.liamgen.repl.co/4.png)
