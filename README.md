@@ -8,7 +8,7 @@
 5 - Importation de packages<br>
 6 - Contrôles<br>
 7 - Ponctuation<br>
-8 - Convertion ex EXE<br>
+8 - Convertion EXE<br>
 
 ## Prérequis
 - Python 3.9.0<br>
@@ -61,7 +61,7 @@ compiler.mainloop()
 Ce qui vous donne : 
 ![Application basique](https://images.liamgen.repl.co/2.png)
 
-`Bien c'est déjà le fin de ce chapitre. Voici le résumé du code
+Bien c'est déjà le fin de ce chapitre. Voici le résumé du code
 ```python
 # Importation des modules
 import tkinter
