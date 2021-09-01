@@ -216,7 +216,7 @@ else:
             status_value.set("Not saved")
         else: 
             status_value.set("Saved")
-            ```
+```
 dans la fonction key_pressed. Vous pouvez aussi ajouter `status_value.set("Saved")` dans la fonction save_as
 
 ### Conversion EXE
@@ -229,7 +229,7 @@ Voici son contenu :
 import sys
 from cx_Freeze import setup, Executable
 
-# *Mettez ici les packages utilisés
+# Mettez ici les packages utilisés
 build_exe_options = {"packages": ["os", "tkinter", "subprocess", "time", "sys", "tkhtmlview", "time", "markdown"]}
 
 
