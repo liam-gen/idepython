@@ -242,6 +242,15 @@ setup(
     version = "0.1", # Version de l'app
     description = "IDE fait en Python", # Description de l'app
     options = {"build_exe": build_exe_options},
-    executables = [Executable("code/main.py", base=base, icon="assets\logo.ico", targetName="FiveCode.exe")]
+    executables = [Executable("main.py", base=base, icon="logo.ico", targetName="monide.exe")] # Entrez dans le premier argument le fichier qui va être lancé, puis la base, puis l'icon de votre app et enfin le nom du fichier executable qui va être créer
 )
 ```
+
+Lancez ensuite `python setup.py build` et attendez la fin du chargement (*ca peut prendre du temps*)
+
+Allez ensuite avec votre navigateur de fichiers dans votre projet>build>exe.win-amd64-3.9>votrefichier.exe
+
+Et voila votre ide est créer! Dans le prochain tuto nous apprendrons a créer un launcher minecraft en Python
+
+J'espère que ce tuto vous as aider et bonne chance
+*Je prend toutes les questions ici ou en mp sur discord (liamgen.js#1315):)
