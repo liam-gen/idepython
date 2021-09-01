@@ -453,4 +453,4 @@ Et voila votre ide est créer! Dans le prochain tuto nous apprendrons a créer u
 J'espère que ce tuto vous as aider et bonne chance<br>
 *Je prend toutes les questions ici ou en mp sur discord (liamgen.js#1315):)*
 
-**Laissez place a votre créativité car je sais qu'il est possible de l'améliorer *Je l'ai fais et ça arrivera bientôt dans des mises a jour**
+**Laissez place a votre créativité car je sais qu'il est possible de l'améliorer *Je l'ai fais et ça arrivera bientôt dans des mises a jour***
