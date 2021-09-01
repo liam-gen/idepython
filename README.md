@@ -7,8 +7,8 @@ _Cela pourrais vous paraître beaucoup si vous regardez tout mais c'est beaucoup
 2 - [Système de fichiers](#système-de-fichiers)<br>
 3 - [Lancement du code](#lancement-du-code)<br>
 4 - [Ajout d'autres langages](#ajout-de-langages)<br>
-5 - Importation de packages<br>
-6 - Contrôles<br>
+5 - [Importation de packages](#importation-des-packages)<br>
+6 - [Contrôles](#controles)<br>
 7 - [Finitions](https://github.com/liam-gen/idepython/blob/main/SUITE.md#finitions)<br>
 8 - [Convertion EXE](https://github.com/liam-gen/idepython/blob/main/SUITE.md#conversion-exe)<br>
 
@@ -560,7 +560,7 @@ code_output.pack()
 compiler.mainloop()
 ```
 
-### Imporrtation des packages
+### Importation des packages
 
 Déjà nous allons créer un menu avec comme command import_package. Je pense que vous savez le faire, je vais donc vous épargner ce détail. Nous allons ensuite ajouter ces codes en dessous de la fonction run
 
