@@ -9,8 +9,8 @@ _Cela pourrais vous paraître beaucoup si vous regardez tout mais c'est beaucoup
 4 - [Ajout d'autres langages](#ajout-de-langages)<br>
 5 - Importation de packages<br>
 6 - Contrôles<br>
-7 - [Finitions](#finitions)<br>
-8 - [Convertion EXE](#conversion-exe)<br>
+7 - [Finitions](https://github.com/liam-gen/idepython/blob/main/SUITE.md#finitions)<br>
+8 - [Convertion EXE](https://github.com/liam-gen/idepython/blob/main/SUITE.md#conversion-exe)<br>
 
 ## Prérequis
 - Python 3.9.0<br>
