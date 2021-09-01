@@ -8,7 +8,7 @@ _Cela pourrais vous paraître beaucoup si vous regardez tout mais c'est beaucoup
 3 - [Lancement du code](#lancement-du-code)<br>
 4 - [Ajout d'autres langages](#ajout-de-langages)<br>
 5 - [Importation de packages](#importation-des-packages)<br>
-6 - [Contrôles](#controles)<br>
+6 - [Contrôles](#contrôles)<br>
 7 - [Finitions](https://github.com/liam-gen/idepython/blob/main/SUITE.md#finitions)<br>
 8 - [Convertion EXE](https://github.com/liam-gen/idepython/blob/main/SUITE.md#conversion-exe)<br>
 
