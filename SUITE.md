@@ -448,7 +448,7 @@ code_output.pack()
 compiler.mainloop()
 ```
 
-Et voila votre ide est créer! Dans le prochain tuto nous apprendrons a créer un launcher minecraft en Python
+Et voila votre ide est créer! Dans le prochain tuto nous apprendrons a ajouter des onglets pour ouvrir plusieurs fichiers!
 
 J'espère que ce tuto vous as aider et bonne chance<br>
 *Je prend toutes les questions ici ou en mp sur discord (liamgen.js#1315):)*
