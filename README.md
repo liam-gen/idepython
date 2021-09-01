@@ -9,8 +9,8 @@ _Cela pourrais vous paraître beaucoup si vous regardez tout mais c'est beaucoup
 4 - [Ajout d'autres langages](#ajout-de-langages)<br>
 5 - Importation de packages<br>
 6 - Contrôles<br>
-7 - Finitions<br>
-8 - Convertion EXE<br>
+7 - [Finitions](#finitions)<br>
+8 - [Convertion EXE](#conversion-exe)<br>
 
 ## Prérequis
 - Python 3.9.0<br>
@@ -796,4 +796,4 @@ def key_pressed(key):
         return
 ```
 
-La suite se passe dans le fichier `SUITE.md`
+La suite se passe dans le fichier [`SUITE.md`](https://github.com/liam-gen/idepython/blob/main/SUITE.md)
