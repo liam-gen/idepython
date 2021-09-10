@@ -2,14 +2,14 @@
 ## Pour commencer cette dexuième partie nous allons repartir de zéro. Bien sûr les connaisances acquises dans la partie 1 nous sevira dans cette partie.
 
 ## Chapitres<br>
-1 - [Application de base](#application-de-base)<br>
-2 - [Système de fichiers](#système-de-fichiers)<br>
-3 - [Lancement du code](#lancement-du-code)<br>
-4 - [Ajout d'autres langages](#ajout-de-langages)<br>
-5 - [Importation de packages](#importation-des-packages)<br>
-6 - [Contrôles](#contrôles)<br>
-7 - [Finitions](https://github.com/liam-gen/idepython/blob/main/SUITE.md#finitions)<br>
-8 - [Convertion EXE](https://github.com/liam-gen/idepython/blob/main/SUITE.md#conversion-exe)<br>
+1 - [](#application-de-base)<br>
+2 - [](#système-de-fichiers)<br>
+3 - [](#lancement-du-code)<br>
+4 - [](#ajout-de-langages)<br>
+5 - [](#importation-des-packages)<br>
+6 - [](#contrôles)<br>
+7 - [](https://github.com/liam-gen/idepython/blob/main/SUITE.md#finitions)<br>
+8 - [](https://github.com/liam-gen/idepython/blob/main/SUITE.md#conversion-exe)<br>
 
 ### Application de base
 
@@ -38,3 +38,18 @@ import time
 from tkhtmlview import HTMLLabel
 from markdown import markdown
 ```
+
+> Maintenant que tout ça est fait nous allons pouvoir commencer a créer l'application
+- En dessous du précédent code ajoutez ceci
+```python
+compiler = Tk()
+tabcontrol = Notebook(compiler) # Nouveauté (côntrole des onglets)
+compiler.title("Mon éditeur de code") # Titre de votre app
+compiler.geometry("900x700+500+150") # Taille de votre app
+# La fonction os.path.abspath est requise pour convertir en EXE. Elle nous retourne le chemin entier du fichier (ex: os.path.abspath('main.py') retournera C:Users/User/Desktop/Votre Projet/main.py)
+compiler.iconbitmap(os.path.abspath('votreimage.ico'))
+
+# Ces ligne doit toujours être a la fin
+compiler.mainloop()
+```
+La suite arrive prochainement ...
