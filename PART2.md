@@ -23,7 +23,7 @@
 - Markdown `pip install markdown`
 - TkHtmlView `pip install tkhtmlview`
 
-> Bien voici notre code pour importer les modules
+> Ensuite, ajoutons les importations des modules tout en haut du code
 
 ```python
 # Importation des modules
@@ -48,8 +48,35 @@ compiler.title("Mon éditeur de code") # Titre de votre app
 compiler.geometry("900x700+500+150") # Taille de votre app
 # La fonction os.path.abspath est requise pour convertir en EXE. Elle nous retourne le chemin entier du fichier (ex: os.path.abspath('main.py') retournera C:Users/User/Desktop/Votre Projet/main.py)
 compiler.iconbitmap(os.path.abspath('votreimage.ico'))
+folder_path = ""
+output = Text(height=10, width=250, bg='#212422', foreground='white', selectbackground='#5865F2') # La sortie sera la même dans tous les onglets
+
 
 # Ces ligne doit toujours être a la fin
 compiler.mainloop()
 ```
-La suite arrive prochainement ...
+
+### Onglets
+
+Pour utiliser les onglets nous alons nous baser sur l'ouverture d'un dossier.
+Pour commencer vous allez devoir créer cette classe:
+
+```python
+class Tab:
+    def __init__(self, file):
+        self.file = file
+        tab = Frame(tabcontrol)
+        if os.path.isfile(folder_path+"/"+file) and (file.endswith('.py') or file.endswith('.js') or file.endswith('.html') or file.endswith('.md') or file.endswith('.txt')):
+            f = open(folder_path+"/"+file, 'r')
+            code = f.read()
+            f.close()
+            run_btn = Button(tab, text="Run", command=(lambda: self.run())).pack()
+            save_btn = Button(tab, text="Save", command=(lambda: self.save())).pack()
+            text = Text(tab, height=50, width=250, bg='#545955', foreground='white', selectbackground='#5865F2', insertbackground='white')
+            self.text = text
+            text.insert(1.0, code)
+            text.pack()
+            tabcontrol.add(tab, text=file)
+```
+
+La suite arrive bientôt ...
